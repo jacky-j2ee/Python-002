@@ -1,3 +1,4 @@
 .vscode/  
 task1v/  
 task2v/  
+__pycache__/  
