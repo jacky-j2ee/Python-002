@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from time import sleep
 from bs4 import BeautifulSoup as bs
 
 user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.26 Safari/537.36'
@@ -41,6 +42,7 @@ for itag in bs_info.find_all('div', attrs={'class': 'movie-item-hover'}):
         if movie_count < 1:
             break
         movie_detail = getMovieDetail(atag.get('href'))
+        sleep(10)
         movie_list.append(movie_detail)
         movie_count -= 1
 
