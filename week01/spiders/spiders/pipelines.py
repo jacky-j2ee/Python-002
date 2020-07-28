@@ -7,5 +7,14 @@
 
 
 class SpidersPipeline:
+    # def process_item(self, item, spider):
+    #     return item
+
     def process_item(self, item, spider):
+        title = item['title']
+        category = item['category']
+        showtime = item['showtime']
+        output = f'{title},{category},{showtime}\n'
+        with open('./maoyanmovie.csv', 'a+', encoding='utf-8') as article:
+            article.write(output)
         return item
